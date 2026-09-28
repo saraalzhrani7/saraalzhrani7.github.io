@@ -593,13 +593,6 @@
   .track-block-sub{ font-size:13.5px; color:var(--text-dim); margin-top:8px; max-width:640px; }
   .track-block-tools{ font-size:11.5px; color:var(--text-faint); margin-top:8px; direction:ltr; unicode-bidi:embed; text-align:right; }
   @media (max-width:600px){ .track-block-tools{ text-align:right; } }
-  .track-swipe-hint{ display:none; }
-  @media (max-width:760px){
-    .track-swipe-hint{
-      display:block; font-size:11px; color:var(--text-faint); margin-top:14px;
-      direction:ltr; unicode-bidi:embed; text-align:center;
-    }
-  }
   .track-steps-wrap{ position:relative; }
   @media (max-width:760px){
     .track-steps-wrap::before, .track-steps-wrap::after{
@@ -613,7 +606,6 @@
     gap:0; margin-top:36px; overflow-x:auto; padding:6px 0 14px;
     scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch;
   }
-  @media (max-width:760px){ .track-steps{ margin-top:10px; } }
   .track-steps > .track-step{ scroll-snap-align:start; }
   .track-steps::before{
     content:''; position:absolute; top:113px; left:85px; right:85px; height:2px;
@@ -1113,7 +1105,6 @@
       </div>
       <p class="track-block-sub"><span data-i18n="ar">مسار متكامل من 5 دورات متسلسلة، من أساسيات قواعد البيانات إلى SQL المتقدم وMongoDB.</span><span data-i18n="en" hidden>A complete 5-course sequential path, from database fundamentals to advanced SQL and MongoDB.</span></p>
       <p class="track-block-tools mono"><span data-i18n="ar">الأدوات: </span><span data-i18n="en" hidden>Tools: </span>MySQL Workbench · WampServer64 · MongoDB Compass</p>
-      <p class="track-swipe-hint mono"><span data-i18n="ar">اسحبي يمين/يسار لعرض كل الدورات ⇄</span><span data-i18n="en" hidden>Swipe to see all courses ⇄</span></p>
       <div class="track-steps-wrap">
       <div class="track-steps">
         
