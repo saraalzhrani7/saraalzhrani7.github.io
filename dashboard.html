@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Awal Khatwa Dashboard — Sara Alzahrani</title>
+<meta name="description" content="Power BI dashboard project: opportunities and visitor analytics for Awal Khatwa, a job-aggregation platform built by Sara Alzahrani.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#0E1116;--surface:#151A21;--surface2:#1A2230;--line:#262E3A;--text:#EDF1F5;--muted:#93A0AD;--dim:#667281;--green:#3FC7E8;--green-d:#349EB9}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:"IBM Plex Sans Arabic","Segoe UI",system-ui,sans-serif;line-height:1.4;
+background-image:radial-gradient(ellipse 60% 40% at 30% -5%,rgba(63,199,232,.13),transparent 70%)}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 48px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo{white-space:nowrap;font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:500;letter-spacing:2.5px;line-height:1;padding-right:14px;border-right:1px solid var(--line)}
+.logo b{color:var(--green);font-weight:400}
+.ttl h1{font-size:18px;font-weight:700}
+.ttl p{font-size:12.5px;color:var(--muted)}
+.back{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.back:hover{color:var(--text);border-color:var(--green)}
+.tabs{display:inline-flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:16px}
+.tabs button{background:none;border:0;color:var(--muted);font:inherit;font-size:13.5px;padding:7px 20px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected=true]{background:rgba(63,199,232,.2);color:var(--text)}
+.tabs button:focus-visible{outline:2px solid var(--green)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;min-width:0}
+.kpi .l{font-size:12.5px;color:var(--muted)}
+.kpi .v{font-size:34px;font-weight:700;margin-top:2px;letter-spacing:-.5px}
+.kpi .s{font-size:11.5px;color:var(--dim);margin-top:2px}
+.card h2{font-size:13px;font-weight:600;color:var(--text);margin-bottom:10px}
+.c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}.c6{grid-column:span 6}.c7{grid-column:span 7}.c8{grid-column:span 8}.c12{grid-column:span 12}
+.hbar{display:grid;grid-template-columns:minmax(80px,130px) 1fr 34px;gap:10px;align-items:center;font-size:12.5px;margin:7px 0}
+.hbar .n{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hbar .t{height:10px;border-radius:5px;background:var(--surface2);overflow:hidden}
+.hbar .t i{display:block;height:100%;background:var(--green);border-radius:5px}
+.hbar .x{text-align:right;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{color:var(--muted);font-weight:600;text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.scroll{max-height:250px;overflow:auto}
+.tag{display:inline-block;font-size:11px;color:var(--green);border:1px solid rgba(63,199,232,.4);border-radius:999px;padding:1px 8px;white-space:nowrap}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#11161c}
+.tile b{display:block;font-size:22px}
+.tile span{font-size:12px;color:var(--muted)}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.ax{fill:var(--muted);font-size:11px}
+.tip{position:fixed;pointer-events:none;background:#0E1116;border:1px solid var(--green);border-radius:8px;padding:6px 10px;font-size:12px;opacity:0;transition:opacity .08s;z-index:9;white-space:nowrap}
+footer{margin-top:22px;font-size:12px;color:var(--dim);text-align:center}
+[hidden]{display:none!important}
+@media(max-width:860px){.c3,.c4,.c5,.c6,.c7,.c8{grid-column:span 6}.c12{grid-column:span 12}}
+@media(max-width:560px){.c3,.c4,.c5,.c6,.c7,.c8{grid-column:span 12}.c3.kpi{grid-column:span 6}.kpi .v{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="index.html" aria-label="Back to portfolio">
+    <div class="logo">SARA <b>ALZAHRANI</b></div>
+    <div class="ttl"><h1>Awal Khatwa — Platform Dashboard</h1><p id="sub">Loading…</p></div>
+  </a>
+  <span style="display:flex;gap:8px;flex-wrap:wrap"><a class="back" href="index.html">← Portfolio</a><a class="back" href="https://saraalzhrani7.github.io/Awal-khatwa/" target="_blank" rel="noopener">Live site ↗</a></span>
+</header>
+
+<div class="tabs" role="tablist">
+  <button role="tab" id="t-ov" aria-selected="true" aria-controls="p-ov">Overview</button>
+  <button role="tab" id="t-vi" aria-selected="false" aria-controls="p-vi">Visitors</button>
+</div>
+
+<section id="p-ov" role="tabpanel" aria-labelledby="t-ov">
+ <div class="grid">
+  <div class="card kpi c3"><div class="l">Open Opportunities</div><div class="v" id="k-open">–</div><div class="s">right now</div></div>
+  <div class="card kpi c3"><div class="l">New This Week</div><div class="v" id="k-new">–</div><div class="s">first seen in the last 7 days</div></div>
+  <div class="card kpi c3"><div class="l">Apply Clicks</div><div class="v" id="k-apply">–</div><div class="s">clicks on “Apply”</div></div>
+  <div class="card kpi c3"><div class="l">Apply Rate</div><div class="v" id="k-rate">–</div><div class="s">“I applied” ÷ apply clicks</div></div>
+
+  <div class="card c8"><h2>Open Opportunities Over Time</h2><div id="ch-hist"></div></div>
+  <div class="card c4"><h2>Top Companies (open roles)</h2><div id="top-co"></div></div>
+
+  <div class="card c4"><h2>By City</h2><div id="by-city"></div></div>
+  <div class="card c4"><h2>By Type</h2><div id="by-type"></div></div>
+  <div class="card c4"><h2>By Field</h2><div id="by-field"></div></div>
+
+  <div class="card c12"><h2>New This Week</h2><div class="scroll"><table><thead><tr><th>Company</th><th>Role</th><th>Type</th><th>City</th></tr></thead><tbody id="new-rows"></tbody></table></div></div>
+ </div>
+</section>
+
+<section id="p-vi" role="tabpanel" aria-labelledby="t-vi" hidden>
+ <div class="grid">
+  <div class="card kpi c4"><div class="l">Page Views</div><div class="v" id="k-pv">–</div><div class="s" id="k-pv-s"></div></div>
+  <div class="card kpi c4"><div class="l">Mobile Share</div><div class="v" id="k-mob">–</div><div class="s">of visits by device</div></div>
+  <div class="card kpi c4"><div class="l">From LinkedIn</div><div class="v" id="k-li">–</div><div class="s">page views</div></div>
+
+  <div class="card c6"><h2>Traffic Sources</h2><div id="sources"></div></div>
+  <div class="card c6"><h2>CV Tool Usage</h2><div class="tiles" id="cv"></div></div>
+  <div class="card c12"><h2>Daily Page Views</h2><div id="ch-daily"></div></div>
+ </div>
+</section>
+
+<footer id="foot">Built with Power BI (DAX, Power Query) and rebuilt for the web · data is aggregated and anonymous, a snapshot of the platform’s public listings and visitor analytics.</footer>
+</div>
+<div class="tip" id="tip"></div>
+
+<noscript><p style="padding:20px">This dashboard needs JavaScript.</p></noscript>
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var tip=$('tip');
+function showTip(e,html){tip.innerHTML=html;tip.style.opacity=1;var w=tip.offsetWidth;var x=Math.min(e.clientX+14,innerWidth-w-8);tip.style.left=x+'px';tip.style.top=(e.clientY+14)+'px'}
+function hideTip(){tip.style.opacity=0}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function fd(s){var p=s.split('-');return MON[+p[1]-1]+' '+(+p[2])}
+
+function bars(el,items,max){
+  max=max||Math.max.apply(null,items.map(function(i){return i.value}))||1;
+  el.innerHTML=items.map(function(i){
+    return '<div class="hbar"><span class="n" title="'+esc(i.name)+'">'+esc(i.name)+'</span><span class="t"><i style="width:'+(i.value/max*100)+'%"></i></span><span class="x">'+i.value+'</span></div>'}).join('');
+}
+
+function area(el,pts){ // pts:[{date,open}]
+  var W=760,H=250,L=34,R=12,T=18,B=26,max=Math.max.apply(null,pts.map(function(p){return p.open}));
+  var top=Math.ceil((max+4)/10)*10,n=pts.length;
+  var X=function(i){return L+(W-L-R)*i/(n-1)},Y=function(v){return T+(H-T-B)*(1-v/top)};
+  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Open opportunities over time">';
+  [0,.25,.5,.75,1].forEach(function(f){var v=Math.round(top*f);s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="#262E3A" stroke-dasharray="2 4"/><text class="ax" x="'+(L-6)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+v+'</text>'});
+  var line=pts.map(function(p,i){return (i?'L':'M')+X(i).toFixed(1)+' '+Y(p.open).toFixed(1)}).join(' ');
+  s+='<defs><linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3FC7E8" stop-opacity=".4"/><stop offset="1" stop-color="#3FC7E8" stop-opacity="0"/></linearGradient></defs>';
+  s+='<path d="'+line+' L'+X(n-1)+' '+Y(0)+' L'+X(0)+' '+Y(0)+'Z" fill="url(#g1)"/><path d="'+line+'" fill="none" stroke="#3FC7E8" stroke-width="2"/>';
+  var step=Math.ceil(n/6);
+  pts.forEach(function(p,i){if(i%step===0||i===n-1)s+='<text class="ax" x="'+X(i)+'" y="'+(H-6)+'" text-anchor="middle">'+fd(p.date)+'</text>'});
+  s+='<circle id="hd" r="4.5" fill="#3FC7E8" stroke="#151A21" stroke-width="2" style="display:none"/>';
+  s+='<rect id="hr" x="'+L+'" y="0" width="'+(W-L-R)+'" height="'+H+'" fill="transparent"/></svg>';
+  el.innerHTML=s;
+  var svg=el.firstChild,hr=svg.querySelector('#hr'),hd=svg.querySelector('#hd');
+  hr.addEventListener('mousemove',function(e){var r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)/r.width*W;var i=Math.max(0,Math.min(n-1,Math.round((sx-L)/(W-L-R)*(n-1))));
+    hd.style.display='';hd.setAttribute('cx',X(i));hd.setAttribute('cy',Y(pts[i].open));showTip(e,'<b>'+pts[i].open+'</b> open · '+fd(pts[i].date))});
+  hr.addEventListener('mouseleave',function(){hd.style.display='none';hideTip()});
+}
+
+function cols(el,pts){ // pts:[{date,value}]
+  var W=1100,H=250,L=30,R=8,T=14,B=26,max=Math.max.apply(null,pts.map(function(p){return p.value}));
+  var top=Math.ceil(max/10)*10,n=pts.length,slot=(W-L-R)/n,bw=Math.min(28,slot*.62);
+  var Y=function(v){return T+(H-T-B)*(1-v/top)};
+  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Daily page views">';
+  [0,.5,1].forEach(function(f){var v=Math.round(top*f);s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="#262E3A" stroke-dasharray="2 4"/><text class="ax" x="'+(L-6)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+v+'</text>'});
+  var step=Math.ceil(n/8);
+  pts.forEach(function(p,i){var x=L+slot*i+(slot-bw)/2,y=Y(p.value);
+    s+='<rect class="bar" data-i="'+i+'" x="'+x+'" y="'+y+'" width="'+bw+'" height="'+(Y(0)-y)+'" rx="3" fill="#3FC7E8"/>';
+    s+='<rect data-i="'+i+'" class="hit" x="'+(L+slot*i)+'" y="0" width="'+slot+'" height="'+H+'" fill="transparent"/>';
+    if(i%step===0)s+='<text class="ax" x="'+(x+bw/2)+'" y="'+(H-6)+'" text-anchor="middle">'+fd(p.date)+'</text>'});
+  s+='</svg>';el.innerHTML=s;
+  var bs=el.querySelectorAll('.bar');
+  el.querySelectorAll('.hit').forEach(function(h){var i=+h.getAttribute('data-i');
+    h.addEventListener('mousemove',function(e){bs[i].setAttribute('fill','#EDF1F5');showTip(e,'<b>'+pts[i].value+'</b> views · '+fd(pts[i].date))});
+    h.addEventListener('mouseleave',function(){bs[i].setAttribute('fill','#3FC7E8');hideTip()})});
+}
+
+function render(d){
+  var k=d.kpi;
+  $('sub').textContent='Updated '+fd(d.updated)+' · tracking since '+fd(d.since)+', '+d.since.slice(0,4);
+  $('k-open').textContent=k.open;$('k-new').textContent=k.new_this_week;$('k-apply').textContent=k.apply_clicks;
+  $('k-rate').textContent=(k.apply_rate*100).toFixed(1)+'%';
+  $('k-pv').textContent=k.page_views;$('k-pv-s').textContent='since '+fd(d.since);
+  $('k-mob').textContent=Math.round(k.mobile_share*100)+'%';$('k-li').textContent=k.from_linkedin;
+  area($('ch-hist'),d.history);
+  bars($('top-co'),d.top_companies);bars($('by-city'),d.cities);bars($('by-type'),d.types);bars($('by-field'),d.fields);
+  $('new-rows').innerHTML=d.new_listings.map(function(r){return '<tr><td>'+esc(r.company)+'</td><td>'+esc(r.title)+'</td><td><span class="tag">'+esc(r.type)+'</span></td><td>'+esc(r.city)+'</td></tr>'}).join('')||'<tr><td colspan="4">Nothing new this week.</td></tr>';
+  bars($('sources'),d.sources);
+  $('cv').innerHTML=d.cv_tools.map(function(t){return '<div class="tile"><b>'+t.value+'</b><span>'+esc(t.name)+'</span></div>'}).join('');
+  cols($('ch-daily'),d.daily_views);
+}
+
+fetch('data/dashboard.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(render).catch(function(){$('sub').textContent='Could not load data/dashboard.json'});
+
+var tabs=[['t-ov','p-ov'],['t-vi','p-vi']];
+tabs.forEach(function(t){$(t[0]).addEventListener('click',function(){tabs.forEach(function(o){var on=o[0]===t[0];$(o[0]).setAttribute('aria-selected',on);$(o[1]).hidden=!on});hideTip()})});
+})();
+</script>
+</body>
+</html>
