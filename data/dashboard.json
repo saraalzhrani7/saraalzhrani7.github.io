@@ -1,1 +1,378 @@
-
+{
+ "updated": "2026-10-14",
+ "since": "2026-09-25",
+ "kpi": {
+  "open": 48,
+  "new_this_week": 9,
+  "apply_clicks": 88,
+  "applied": 13,
+  "apply_rate": 0.1477,
+  "page_views": 227,
+  "mobile_share": 0.7103,
+  "from_linkedin": 75
+ },
+ "top_companies": [
+  {
+   "name": "webook",
+   "value": 10
+  },
+  {
+   "name": "Salla",
+   "value": 6
+  },
+  {
+   "name": "Lucidya",
+   "value": 5
+  },
+  {
+   "name": "Lean Technologies",
+   "value": 4
+  },
+  {
+   "name": "Ninja",
+   "value": 3
+  },
+  {
+   "name": "Tabby",
+   "value": 3
+  }
+ ],
+ "history": [
+  {
+   "date": "2026-09-25",
+   "open": 25
+  },
+  {
+   "date": "2026-09-26",
+   "open": 43
+  },
+  {
+   "date": "2026-09-27",
+   "open": 51
+  },
+  {
+   "date": "2026-09-28",
+   "open": 42
+  },
+  {
+   "date": "2026-09-29",
+   "open": 44
+  },
+  {
+   "date": "2026-09-30",
+   "open": 44
+  },
+  {
+   "date": "2026-10-01",
+   "open": 43
+  },
+  {
+   "date": "2026-10-02",
+   "open": 43
+  },
+  {
+   "date": "2026-10-03",
+   "open": 43
+  },
+  {
+   "date": "2026-10-04",
+   "open": 45
+  },
+  {
+   "date": "2026-10-05",
+   "open": 46
+  },
+  {
+   "date": "2026-10-06",
+   "open": 45
+  },
+  {
+   "date": "2026-10-07",
+   "open": 46
+  },
+  {
+   "date": "2026-10-08",
+   "open": 47
+  },
+  {
+   "date": "2026-10-09",
+   "open": 46
+  },
+  {
+   "date": "2026-10-10",
+   "open": 46
+  },
+  {
+   "date": "2026-10-11",
+   "open": 46
+  },
+  {
+   "date": "2026-10-12",
+   "open": 45
+  },
+  {
+   "date": "2026-10-13",
+   "open": 50
+  },
+  {
+   "date": "2026-10-14",
+   "open": 48
+  }
+ ],
+ "cities": [
+  {
+   "name": "Riyadh",
+   "value": 38
+  },
+  {
+   "name": "Jeddah",
+   "value": 5
+  },
+  {
+   "name": "Makkah",
+   "value": 4
+  },
+  {
+   "name": "Khobar",
+   "value": 2
+  },
+  {
+   "name": "Madinah",
+   "value": 2
+  },
+  {
+   "name": "Saudi Arabia (any)",
+   "value": 2
+  }
+ ],
+ "types": [
+  {
+   "name": "Internship",
+   "value": 19
+  },
+  {
+   "name": "Entry Level",
+   "value": 12
+  },
+  {
+   "name": "Graduate Program",
+   "value": 12
+  },
+  {
+   "name": "Co-op",
+   "value": 5
+  }
+ ],
+ "fields": [
+  {
+   "name": "Business",
+   "value": 16
+  },
+  {
+   "name": "Tech",
+   "value": 9
+  },
+  {
+   "name": "Marketing",
+   "value": 7
+  },
+  {
+   "name": "Product & Design",
+   "value": 6
+  },
+  {
+   "name": "Finance",
+   "value": 3
+  },
+  {
+   "name": "Data",
+   "value": 2
+  },
+  {
+   "name": "Engineering",
+   "value": 2
+  },
+  {
+   "name": "Cybersecurity",
+   "value": 1
+  }
+ ],
+ "new_listings": [
+  {
+   "company": "Lean Technologies",
+   "title": "Sales Development Intern",
+   "type": "Internship",
+   "city": "Riyadh"
+  },
+  {
+   "company": "Lean Technologies",
+   "title": "Software Engineering Intern",
+   "type": "Internship",
+   "city": "Riyadh"
+  },
+  {
+   "company": "Lean Technologies",
+   "title": "Customer Support Intern (TechOps)",
+   "type": "Internship",
+   "city": "Riyadh"
+  },
+  {
+   "company": "Salla",
+   "title": "Merchant Care Officer",
+   "type": "Entry Level",
+   "city": "Makkah"
+  },
+  {
+   "company": "Lean Technologies",
+   "title": "Strategic Finance Intern",
+   "type": "Internship",
+   "city": "Riyadh"
+  },
+  {
+   "company": "Sarj",
+   "title": "Agent Engineer Intern",
+   "type": "Internship",
+   "city": "Riyadh"
+  },
+  {
+   "company": "GE Vernova",
+   "title": "Co-op / Internship Program",
+   "type": "Co-op",
+   "city": "Saudi Arabia"
+  },
+  {
+   "company": "Foodics",
+   "title": "Anti Money laundering Specialist",
+   "type": "Entry Level",
+   "city": "Riyadh"
+  },
+  {
+   "company": "Ninja",
+   "title": "Junior Software Engineer - Tamheer (intern)",
+   "type": "Graduate Program",
+   "city": "Riyadh"
+  }
+ ],
+ "sources": [
+  {
+   "name": "LinkedIn",
+   "value": 75
+  },
+  {
+   "name": "Direct",
+   "value": 72
+  },
+  {
+   "name": "Bing",
+   "value": 2
+  },
+  {
+   "name": "Google",
+   "value": 2
+  },
+  {
+   "name": "GitHub",
+   "value": 1
+  }
+ ],
+ "cv_tools": [
+  {
+   "name": "CV Upload",
+   "value": 12
+  },
+  {
+   "name": "Job Match",
+   "value": 12
+  },
+  {
+   "name": "PDF Import",
+   "value": 7
+  },
+  {
+   "name": "CV Download",
+   "value": 6
+  }
+ ],
+ "daily_views": [
+  {
+   "date": "2026-09-25",
+   "value": 9
+  },
+  {
+   "date": "2026-09-26",
+   "value": 35
+  },
+  {
+   "date": "2026-09-27",
+   "value": 23
+  },
+  {
+   "date": "2026-09-28",
+   "value": 9
+  },
+  {
+   "date": "2026-09-29",
+   "value": 9
+  },
+  {
+   "date": "2026-09-30",
+   "value": 2
+  },
+  {
+   "date": "2026-10-01",
+   "value": 1
+  },
+  {
+   "date": "2026-10-02",
+   "value": 8
+  },
+  {
+   "date": "2026-10-03",
+   "value": 2
+  },
+  {
+   "date": "2026-10-04",
+   "value": 4
+  },
+  {
+   "date": "2026-10-05",
+   "value": 7
+  },
+  {
+   "date": "2026-10-06",
+   "value": 1
+  },
+  {
+   "date": "2026-10-07",
+   "value": 8
+  },
+  {
+   "date": "2026-10-08",
+   "value": 7
+  },
+  {
+   "date": "2026-10-09",
+   "value": 5
+  },
+  {
+   "date": "2026-10-10",
+   "value": 18
+  },
+  {
+   "date": "2026-10-11",
+   "value": 22
+  },
+  {
+   "date": "2026-10-12",
+   "value": 8
+  },
+  {
+   "date": "2026-10-13",
+   "value": 22
+  },
+  {
+   "date": "2026-10-14",
+   "value": 27
+  }
+ ]
+}
